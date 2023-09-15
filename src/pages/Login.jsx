@@ -51,10 +51,7 @@ const Login = ({ setIsLogined }) => {
       return;
     }
 
-    const existedAccount = accounts.find(
-      (account) =>
-        JSON.stringify(account) === JSON.stringify({ email, password })
-    );
+    const existedAccount = accounts.find((account) => account.email === email);
 
     if (existedAccount) {
       setError('Account already exists!');
